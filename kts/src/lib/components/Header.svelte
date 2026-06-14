@@ -11,41 +11,39 @@
   ];
 </script>
 
-<header class="bg-[#0f1015] pl-[188px] pr-[188px] ">
-  <div class="mx-auto flex max-w-screen-xl items-center justify-between h-[72px]">
-  <div class="justify-center flex w-[182px] gap-[4px] h-[42px] items-center ">
-  <div class="div">
-    <img src={ktsImg} alt="kts" class="w-[76px] h-[28px]" />
-  </div>
-  <div class="div ">
-      <img src={sleshImg} alt="slesh" class="w-[12px]  h-[42px]" />
-  </div>
-  <div class="div">
-      <img src={spmhImg} alt="spm" class="w-[86px] h-[36px]" />
-  </div>
-</div>
-  <div class="nav">
-    <nav class="flex items-center justify-center w-full h-[72px] gap-[64px] ">
-      {#each navItems as item}
-        <a href={item.href} class="flex items-center justify-center">
-          <span class="text-xl text-[#F8F8F8] font-medium font-tiktok">{item.name}</span>
+<header class="bg-[#0f1015] w-full h-[6.667vmin] flex items-center justify-center pl-[2.778vmin] pr-[2.778vmin]">
+  <div class="flex items-center justify-between h-[6.667vmin] w-[142.963vmin]">
+    <div class="justify-center flex w-[16.852vmin] h-[3.889vmin] items-center">
+      <div class="div">
+        <img src={ktsImg} alt="kts" class="w-[7.037vmin] h-[2.593vmin]" />
+      </div>
+      <div class="div">
+        <img src={sleshImg} alt="slesh" class="w-[1.111vmin] h-[3.889vmin]" />
+      </div>
+      <div class="div">
+        <img src={spmhImg} alt="spm" class="w-[7.963vmin] h-[3.333vmin]" />
+      </div>
+    </div>
+    <div class="nav">
+      <nav class="flex items-center justify-between h-[6.667vmin] w-[37.222vmin]">
+        {#each navItems as item}
+          <a href={item.href} class="flex items-center">
+            <span class="text-[1.852vmin] text-[#F8F8F8] font-medium font-tiktok">{item.name}</span>
+          </a>
+        {/each}
+      </nav>
+    </div>
+    <div class="profile gap-[1.111vmin] flex items-center justify-center">
+      <div>
+        <a href="/profile" class="flex items-center justify-center">
+          <span class="text-[1.852vmin] text-[#F8F8F8] font-medium font-tiktok">Madara0330H</span>
         </a>
-      {/each}
-    </nav>
-  </div>
-<div class="profile gap-3 flex items-center justify-center">
-
-<div class="">
-    <a href="/profile" class="flex items-center justify-center">
-          <span class="text-xl text-[#F8F8F8] font-medium font-tiktok">Madara0330H</span>
+      </div>
+      <div>
+        <a href="/profile" class="flex items-center justify-center">
+          <img src={madara0330hImg} alt="madara0330h" class="w-[4.074vmin] h-[4.074vmin]" />
         </a>
-  </div>
-  <div class="">
-  <a href="/profile" class="flex items-center justify-center">
-          <span class="text-xl text-[#F8F8F8] font-medium font-tiktok">   <img src={madara0330hImg} alt="madara0330h" class="w-[44px] h-[44px]" /></span>
-        </a>
-    
-  </div>
-</div>
+      </div>
+    </div>
   </div>
 </header>
