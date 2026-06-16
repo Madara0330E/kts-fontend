@@ -2,8 +2,8 @@
  
 </script>
 
-<aside class="flex flex-col w-[288px] max-h-full h-full ">
-<div class="flex flex-col gap-[36px] pl-[8px] pr-[8px] rounded-[20px] pt-[8px] pb-[8px] bg-[#212121]/60">
+<aside class="flex flex-col w-[288px] max-h-full h-full  ">
+<div class="flex flex-col gap-[36px] justify-between pl-[8px] pr-[8px] rounded-[20px] pt-[8px] pb-[8px] bg-[#212121]/60 max-h-full h-full">
 <div class="flex flex-col gap-[4px] ">
  <div class="flex gap-[12px] items-center pl-[16px] pr-[16px] rounded-[10px] pt-[2px] pb-[2px] bg-[#2F2F2F] w-[272px] h-[71px]">
    <div class="flex flex-col">

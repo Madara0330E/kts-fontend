@@ -4,24 +4,33 @@
 	import Header from '$lib/components/Header.svelte';
 	import LeftPanel from '$lib/components/LeftPanel.svelte';
 	import RightPanel from '$lib/components/RightPanel.svelte';
-	let { children } = $props();
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<svelte:head>
+	<link rel="icon" href={favicon} />
+</svelte:head>
 
-<div class="min-h-screen bg-[#2B2B2B]">
+<div class=" bg-[#212121] w-full h-screen flex flex-col">
 	<Header />
-	<main class="mx-auto w-full max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8 lg:pl-[360px] lg:pr-[360px]">
-		{@render children()}
-	</main>
-	<div class="fixed left-5 top-24 bottom-5 z-40 hidden lg:block ">
-		<div class="h-full overflow-y-auto">
-			<LeftPanel />
-		</div>
-	</div>
-	<div class="fixed right-5 top-24 bottom-5 z-40 hidden lg:block ">
-		<div class="h-full overflow-y-auto">
-			<RightPanel />
-		</div>
+
+	<div class="flex items-center justify-center w-full h-full">
+		<main class="mx-auto w-full h-full rounded-tl-[40px] pl-[32px] pr-[32px] pt-[32px] pb-[32px] rounded-tr-[40px] rounded-bl-[0px] rounded-br-[0px] bg-[#2B2B2B] flex">
+			<aside class="sticky left-0 top-[6.667vmin] h-full w-[288px]">
+				<div class="h-full ">
+					<LeftPanel />
+				</div>
+			</aside>
+
+			<div class="flex-1">
+				<slot />
+			</div>
+
+			<aside class="sticky right-0 top-[6.667vmin] h-full w-[288px]">
+				<div class="h-full ">
+					<RightPanel />
+				</div>
+			</aside>
+		</main>
 	</div>
 </div>
+
