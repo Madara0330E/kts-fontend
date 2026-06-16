@@ -1,40 +1,38 @@
 <script>
-  let actions = [
-    { title: 'Профильдоговно 100ap', subtitle: '24 часа назад', color: 'text-pink-400', icon: '⏱' },
-    { title: 'Переименовали', subtitle: '24 часа назад', color: 'text-amber-400', icon: '✏️' },
-    { title: 'Удалили карту', subtitle: '24 часа назад', color: 'text-red-400', icon: '🗑️' },
-    { title: 'Добавление участника', subtitle: '24 часа назад', color: 'text-emerald-400', icon: '➕' },
-    { title: 'Разблокировка', subtitle: '24 часа назад', color: 'text-lime-400', icon: '🔓' },
-    { title: 'Передача прав карты', subtitle: '24 часа назад', color: 'text-sky-400', icon: '🔁' }
-  ];
+  import withdrawalImg from '$lib/assets/images/components/rightPanel/actionIcons/withdrawal.png';
+  import leftArrowImg from '$lib/assets/images/components/rightPanel/leftArrow.png';
+  import rightArrowImg from '$lib/assets/images/components/rightPanel/rightArrow.png';
 </script>
 
-<aside class="flex h-full flex-col gap-6 rounded-[32px] border border-slate-800/80 bg-slate-900/90 p-5 shadow-2xl shadow-slate-950/20">
-  <div>
-    <p class="text-sm uppercase tracking-[0.3em] text-cyan-300">Последние действия</p>
-    <h2 class="mt-3 text-xl font-semibold text-white">Живая лента</h2>
-  </div>
-
-  <div class="space-y-3 overflow-hidden rounded-[28px] border border-slate-800/80 bg-slate-950/80 p-3">
-    {#each actions as action}
-      <div class="flex items-start gap-3 rounded-3xl border border-slate-800/80 bg-slate-900 p-3">
-        <div class={`mt-1 flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-800 ${action.color}`}>{action.icon}</div>
-        <div class="min-w-0 flex-1">
-          <p class="text-sm font-semibold text-slate-100">{action.title}</p>
-          <p class="mt-1 text-xs text-slate-500">{action.subtitle}</p>
-        </div>
-      </div>
-    {/each}
-  </div>
-
-  <div class="mt-auto rounded-[28px] border border-slate-800/80 bg-slate-950/80 p-4 text-sm text-slate-400">
-    <div class="flex items-center justify-between text-slate-300">
-      <span>Страница</span>
-      <span>1 из 1</span>
+<aside class="flex flex-col w-[288px] max-h-full h-full">
+<div class="flex flex-col gap-[4px] pl-[8px] pr-[8px] rounded-[20px] pt-[8px] pb-[8px] bg-[#212121]/60">
+  <div class="flex gap-[12px] items-center pl-[16px] pr-[16px] rounded-[10px] pt-[2px] pb-[2px] bg-[#2F2F2F] w-[272px] h-[51px]">
+    <div class="">
+            <img src={withdrawalImg} alt="withdrawal" class="" />
     </div>
-    <div class="mt-3 flex items-center justify-between gap-2 text-xs text-slate-500">
-      <button class="flex-1 rounded-2xl border border-slate-800/80 bg-slate-900 px-3 py-2 text-left transition hover:border-slate-600">←</button>
-      <button class="flex-1 rounded-2xl border border-slate-800/80 bg-slate-900 px-3 py-2 text-right transition hover:border-slate-600">→</button>
+    <div class="">
+      <div class="text-[16px] text-[#F23E5C] font-medium font-tiktok"><p>@Profiledogovno 100ар</p></div>
+      <div class="text-[12px] text-[#F8F8F8] font-normal font-tiktok"><p>24 часа назад</p></div>
     </div>
   </div>
+  <div class="flex gap-[12px] items-center pl-[16px] pr-[16px] rounded-[10px] pt-[2px] pb-[2px] bg-[#2F2F2F] w-[272px] h-[51px]">
+    <div class="">
+            <img src={withdrawalImg} alt="withdrawal" class="" />
+    </div>
+    <div class="">
+      <div class="text-[16px] text-[#F23E5C] font-medium font-tiktok"><p>@Profiledogovno 100ар</p></div>
+      <div class="text-[12px] text-[#F8F8F8] font-normal font-tiktok"><p>24 часа назад</p></div>
+    </div>
+  </div>
+  </div>
+<div class="flex items-center justify-between pl-[8px] pr-[8px] rounded-[20px] pt-[4px] pb-[4px] bg-[#212121] w-[288px] h-[53px]">
+  <div class="flex items-center justify-center rounded-[12px] bg-[#2C2C2C] w-[45px] h-[45px]">  <img src={leftArrowImg} alt="leftArrow" class="" /></div>
+   <div class="flex items-center justify-between pt-[8px] pb-[8px] gap-[4px]">
+    <div class="flex items-center justify-center rounded-tl-[12px] rounded-tr-[5px] rounded-bl-[12px] rounded-br-[5px] bg-[#2C2C2C] w-[40px] h-[37px]"><p class="text-[16px] text-[#F8F8F8] font-normal font-tiktok">1</p></div>
+    <div class="flex items-center justify-center rounded-tl-[5px] rounded-tr-[5px] rounded-bl-[5px] rounded-br-[5px] bg-[#2C2C2C] w-[45px] h-[37px]"><p class="text-[16px] text-[#F8F8F8] font-normal font-tiktok">из</p></div>
+    <div class="flex items-center justify-center rounded-tl-[5px] rounded-tr-[12px] rounded-bl-[5px] rounded-br-[12px] bg-[#2C2C2C] w-[40px] h-[37px]"><p class="text-[16px] text-[#F8F8F8] font-normal font-tiktok">1</p></div>
+   </div>
+    <div class="flex items-center justify-center rounded-[12px] bg-[#2C2C2C] w-[45px] h-[45px]">  <img src={rightArrowImg} alt="rightArrow" class="" /></div>
+</div>
+ 
 </aside>

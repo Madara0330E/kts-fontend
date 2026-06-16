@@ -1,12 +1,7 @@
 <script>
-	import LeftPanel from '$lib/components/LeftPanel.svelte';
-	import RightPanel from '$lib/components/RightPanel.svelte';
 </script>
 
-<div class="grid gap-6 xl:grid-cols-[280px_minmax(0,1fr)_320px]">
-	<LeftPanel />
-
-	<div class="space-y-6">
+<div class="space-y-6">
 		<div class="rounded-[32px] border border-slate-800/80 bg-slate-900/80 p-6 shadow-2xl shadow-slate-950/20">
 			<div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 				<div>
@@ -61,5 +56,3 @@
 		</div>
 	</div>
 
-	<RightPanel />
-</div>

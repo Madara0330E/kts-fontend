@@ -11,7 +11,7 @@
   ];
 </script>
 
-<header class="bg-[#0f1015] w-full h-[6.667vmin] flex items-center justify-center pl-[2.778vmin] pr-[2.778vmin]">
+<header class="bg-[#212121] w-full h-[6.667vmin] flex items-center justify-center pl-[2.778vmin] pr-[2.778vmin]">
   <div class="flex items-center justify-between h-[6.667vmin] w-[142.963vmin]">
     <div class="justify-center flex w-[16.852vmin] h-[3.889vmin] items-center">
       <div class="div">
