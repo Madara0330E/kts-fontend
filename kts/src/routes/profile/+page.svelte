@@ -8,8 +8,8 @@
 {#await promise}
     <p>Loading...</p>
 {:then result}
-    <p>{JSON.stringify(result.data)}</p>
+    <p>{JSON.stringify(result.data)} {result.error}</p>
 {:catch error}
-    <p>Error: {error}</p>
+    <p>Error: {JSON.stringify(error)}</p>
 {/await}
 </div>
