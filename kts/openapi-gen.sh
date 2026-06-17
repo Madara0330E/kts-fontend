@@ -1,1 +1,1 @@
-npx openapi-typescript https://kts-development.mzh.su/swagger/openapi.json -o src/api.ts
+npx openapi-typescript https://kts-development.mzh.su/swagger/openapi.json -o src/lib/api/schema.d.ts
