@@ -4,6 +4,8 @@
 	import Header from '$lib/components/Header.svelte';
 	import LeftPanel from '$lib/components/LeftPanel.svelte';
 	import RightPanel from '$lib/components/RightPanel.svelte';
+
+	let {children} = $props();
 </script>
 
 <svelte:head>
@@ -22,7 +24,7 @@
 			</aside>
 
 			<div class="flex-1">
-				<slot />
+				{@render children()}
 			</div>
 
 			<aside class="sticky right-0 top-[6.667vmin] h-full w-[288px]">
