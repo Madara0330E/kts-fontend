@@ -22,7 +22,7 @@
 <div class="bg-[#212121] w-full h-screen flex flex-col">
 	<Header />
 	<div class="flex items-center justify-center w-full h-full">
-		<main class="mx-auto w-full h-full rounded-tl-[40px] pl-[32px] pr-[32px] pt-[32px] pb-[32px] rounded-tr-[40px] rounded-bl-[0px] rounded-br-[0px] bg-[#2B2B2B] flex">
+		<main class="mx-auto w-full h-full rounded-tl-[40px] gap-[8px] pl-[32px] pr-[32px] pt-[32px] pb-[32px] rounded-tr-[40px] rounded-bl-[0px] rounded-br-[0px] bg-[#2B2B2B] flex">
 			<aside class="sticky left-0 top-[6.667vmin] h-full w-[288px]">
 				<div class="h-full"><LeftPanel /></div>
 			</aside>
