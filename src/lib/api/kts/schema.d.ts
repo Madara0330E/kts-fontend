@@ -474,25 +474,25 @@ export interface components {
             users: components["schemas"]["UserProjectionResponse"][];
         };
         UserEventProjectionResponse: {
-            Create: {
+            create: {
                 discord_profile: components["schemas"]["DiscordProfileProjectionResponse"];
                 minecraft_profile: components["schemas"]["MinecraftProfileProjectionResponse"];
             };
         } | {
-            ChangeMinecraftProfile: {
+            change_minecraft_profile: {
                 profile: components["schemas"]["MinecraftProfileProjectionResponse"];
             };
         } | {
-            ChangeDiscordProfile: {
+            change_discord_profile: {
                 profile: components["schemas"]["DiscordProfileProjectionResponse"];
             };
         } | {
-            Blocked: {
+            blocked: {
                 /** Format: uuid */
                 judgement_id?: string | null;
             };
         } | {
-            Deleted: {
+            deleted: {
                 payload: boolean;
             };
         };
