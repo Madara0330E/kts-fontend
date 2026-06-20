@@ -6,12 +6,14 @@
 	import RightPanel from '$lib/components/RightPanel.svelte';
 	import { onMount } from 'svelte';
 	import { loadUser } from '$lib/stores/userStore';
+	import { loadSidebarData } from '$lib/stores/sidebarStore';
 	import { API_CHAIN } from '$lib/api/kts/client';
 
 	let { children } = $props();
 
 	onMount(() => {
 		loadUser(API_CHAIN);
+		loadSidebarData();
 	});
 </script>
 
