@@ -68,6 +68,22 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/applications/membered/{agent_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["membered_application"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/applications/search/{application_name}": {
         parameters: {
             query?: never;
@@ -76,6 +92,38 @@ export interface paths {
             cookie?: never;
         };
         get: operations["search_application"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/currencies/complete/{server_id}/{query}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["complete_currency"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/currencies/get/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["get_currency"];
         put?: never;
         post?: never;
         delete?: never;
@@ -308,6 +356,22 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/users/create": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["create_user"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/users/get/{id}": {
         parameters: {
             query?: never;
@@ -377,6 +441,9 @@ export interface components {
         ApplicationGetResponse: {
             application: components["schemas"]["ApplicationProjectionResponse"];
         };
+        ApplicationMemberedResponse: {
+            applications: components["schemas"]["ApplicationProjectionResponse"][];
+        };
         ApplicationProjectionResponse: {
             full: {
                 description: string;
@@ -392,6 +459,25 @@ export interface components {
         };
         ApplicationSearchResponse: {
             application: components["schemas"]["ApplicationProjectionResponse"];
+        };
+        CurrencyCompleteResponse: {
+            currencies: components["schemas"]["CurrencyProjectionResponse"][];
+        };
+        CurrencyGetResponse: {
+            user: components["schemas"]["CurrencyProjectionResponse"];
+        };
+        CurrencyProjectionResponse: {
+            Full: {
+                icon: string;
+                /** Format: uuid */
+                id: string;
+                label: string;
+                name: string;
+                resource: components["schemas"]["ResourceProjectionResponse"];
+                /** Format: uuid */
+                server_id: string;
+                shortcut: string;
+            };
         };
         DiscordProfileProjectionResponse: {
             discord_avatar: string;
@@ -470,8 +556,37 @@ export interface components {
             minecraft_profile_id: string;
             minecraft_skin: string;
         };
+        ResourceProjectionResponse: {
+            Full: {
+                /** Format: int64 */
+                default: number;
+                /** Format: uuid */
+                judgement_id?: string | null;
+                member_ids: [
+                    string,
+                    number
+                ][];
+                /** Format: uuid */
+                owner_id: string;
+                subowner_ids: string[];
+            };
+        } | {
+            Strict: {
+                is_blocked: boolean;
+                /** Format: uuid */
+                owner_id: string;
+            };
+        };
         UserCompleteResponse: {
             users: components["schemas"]["UserProjectionResponse"][];
+        };
+        UserCreateRequest: {
+            discord_id: string;
+            /** Format: uuid */
+            minecraft_uuid: string;
+        };
+        UserCreateResponse: {
+            user: components["schemas"]["UserProjectionResponse"];
         };
         UserEventProjectionResponse: {
             create: {
@@ -674,6 +789,37 @@ export interface operations {
             };
         };
     };
+    membered_application: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                agent_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Applications retrieved successfully */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApplicationMemberedResponse"];
+                };
+            };
+            /** @description Default kts error format */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "text/plain": string;
+                };
+            };
+        };
+    };
     search_application: {
         parameters: {
             query?: never;
@@ -692,6 +838,69 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["ApplicationSearchResponse"];
+                };
+            };
+            /** @description Default kts error format */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "text/plain": string;
+                };
+            };
+        };
+    };
+    complete_currency: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                server_id: string;
+                query: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Currency retrieved successfully */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CurrencyCompleteResponse"];
+                };
+            };
+            /** @description Default kts error format */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "text/plain": string;
+                };
+            };
+        };
+    };
+    get_currency: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Currency retrieved successfully */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CurrencyGetResponse"];
                 };
             };
             /** @description Default kts error format */
@@ -1133,6 +1342,39 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["UserCompleteResponse"];
+                };
+            };
+            /** @description Default kts error format */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "text/plain": string;
+                };
+            };
+        };
+    };
+    create_user: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["UserCreateRequest"];
+            };
+        };
+        responses: {
+            /** @description User retrieved successfully */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["UserCreateResponse"];
                 };
             };
             /** @description Default kts error format */
