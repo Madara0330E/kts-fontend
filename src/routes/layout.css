@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,slnt,wdth,wght@12..36,-6..0,75..150,300..900&display=swap');
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@layer utilities {
+	.font-tiktok {
+		font-family: 'TikTok Sans', sans-serif;
+	}
+}
+
+html, body {
+	min-height: 100%;
+	margin: 0;
+}
+
+body {
+	background: #2B2B2B;
+	font-family: 'TikTok Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+button:not(:disabled),
+[role='button'] {
+	cursor: pointer;
+}
